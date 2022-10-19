@@ -1,10 +1,11 @@
-import logo from "./logo.svg";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import { router } from "./Routes/BasicRouter";
 
 function App() {
   return (
     <div>
-      <h1>Rajib</h1>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
