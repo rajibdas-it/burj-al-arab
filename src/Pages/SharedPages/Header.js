@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import user from "../../assets/rajib.jpeg";
+import hotel from "../../assets/images.jpg";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <div className="flex-1">
           <Link
             to="/"
-            className="btn btn-ghost normal-case text-xl font-serif italic"
+            className="btn btn-ghost normal-case text-xl font-serif italic bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
           >
             Burj-Al-Arab
           </Link>
