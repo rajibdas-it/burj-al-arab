@@ -6,6 +6,7 @@ import { authContext } from "../../Context/UserContext";
 
 const Header = () => {
   const { user } = useState(authContext);
+  console.log(user);
   return (
     <div>
       {/* menu start */}
