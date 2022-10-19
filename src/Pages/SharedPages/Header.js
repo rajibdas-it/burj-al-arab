@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import user from "../../assets/rajib.jpeg";
-import hotel from "../../assets/images.jpg";
+import Propic from "../../assets/rajib.jpeg";
+
+import { authContext } from "../../Context/UserContext";
 
 const Header = () => {
+  const { user } = useState(authContext);
   return (
     <div>
       {/* menu start */}
@@ -31,12 +33,19 @@ const Header = () => {
               <li>
                 <Link to="/signup">Register</Link>
               </li>
+              {user?.uid ? (
+                <li>
+                  <p>Welcome, {user?.email}</p>
+                </li>
+              ) : (
+                "n/a"
+              )}
             </ul>
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user} />
+                <img src={Propic} />
               </div>
             </label>
             <ul
