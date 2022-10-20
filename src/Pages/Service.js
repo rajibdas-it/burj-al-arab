@@ -29,7 +29,7 @@ const Service = ({ item }) => {
             <p>$ {fair}</p>
             <div className="card-actions justify-end">
               <Link to={`../booking/${id}`}>
-                <button className="btn btn-primary">Book Now</button>
+                <button className="btn btn-primary">View Details</button>
               </Link>
             </div>
           </div>

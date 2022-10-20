@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Propic from "../../assets/rajib.jpeg";
 
 import { authContext } from "../../Context/UserContext";
+import NavList from "./NavList";
 
 const Header = () => {
-  const { user } = useState(authContext);
-  console.log(user);
+  const { user, logOut } = useContext(authContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       {/* menu start */}
@@ -20,50 +26,40 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex-none gap-2">
-          <div className="mr-5">
-            <ul className="flex  gap-5">
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/services">Our Services</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/signup">Register</Link>
-              </li>
-              {user?.uid ? (
+          <div className="mr-5 hidden lg:block">
+            <NavList></NavList>
+          </div>
+          {user?.uid && (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={Propic} alt="" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <div className="mr-5 block lg:hidden">
+                  <NavList></NavList>
+                </div>
                 <li>
-                  <p>Welcome, {user?.email}</p>
+                  <Link>Profile</Link>
                 </li>
-              ) : (
-                "n/a"
-              )}
-            </ul>
-          </div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src={Propic} />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Profile</a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          </div>
+                <li>
+                  <Link>Settings</Link>
+                </li>
+                {user?.uid && (
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-outline btn-info"
+                  >
+                    Logout
+                  </button>
+                )}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       {/* menu end */}
