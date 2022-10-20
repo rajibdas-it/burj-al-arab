@@ -27,6 +27,7 @@ const UserContext = ({ children }) => {
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -40,7 +41,7 @@ const UserContext = ({ children }) => {
     };
   }, []);
 
-  const contextValue = { user, createUser, userSignIn, logOut };
+  const contextValue = { user, loading, createUser, userSignIn, logOut };
   return (
     <authContext.Provider value={contextValue}>{children}</authContext.Provider>
   );

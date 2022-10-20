@@ -1,15 +1,17 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Propic from "../../assets/rajib.jpeg";
-
 import { authContext } from "../../Context/UserContext";
 import NavList from "./NavList";
 
 const Header = () => {
   const { user, logOut } = useContext(authContext);
+  const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
-      .then((result) => {})
+      .then((result) => {
+        navigate("/");
+      })
       .catch((err) => console.log(err));
   };
 

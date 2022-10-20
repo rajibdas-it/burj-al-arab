@@ -16,8 +16,8 @@ const Booking = () => {
             <img className="w-full" src={img} alt="Shoes" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <h2 className="card-title">{roomType}</h2>
+
             <div className="flex items-center">
               <p className="flex items-center gap-1">
                 <span>
