@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD3C-GI2Go3ss7mSpqSCVzb_uybyF2su0I",
-  authDomain: "burj-al-arab-e6937.firebaseapp.com",
-  projectId: "burj-al-arab-e6937",
-  storageBucket: "burj-al-arab-e6937.appspot.com",
-  messagingSenderId: "249856813715",
-  appId: "1:249856813715:web:5527d2718098e0b8687b66",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

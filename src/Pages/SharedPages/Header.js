@@ -24,7 +24,7 @@ const Header = () => {
             to="/"
             className="btn btn-ghost normal-case text-xl font-serif italic bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
           >
-            Burj-Al-Arab
+            Al-Saladia
           </Link>
         </div>
         <div className="flex-none gap-2">
@@ -74,9 +74,9 @@ const Header = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">
-              Welcome to <br /> <span className="italic">Burj-Al-Arab</span>
+              Welcome to <br /> <span className="italic">Al-Saladia</span>
             </h1>
-            <p className="mb-5">A global icon of Arabian luxury</p>
+            <p className="mb-5">A global icon of Bangladeshi luxury</p>
             <button className="btn btn-primary">
               <Link to="/">Reserved</Link>
             </button>

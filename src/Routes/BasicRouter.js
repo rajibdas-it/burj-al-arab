@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    loader: () => fetch("http://localhost:5000/services"),
+    loader: () => fetch("https://al-saladia-server.vercel.app/services"),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       { path: "/", element: <Home></Home> },
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/booking/${params.id}`),
+          fetch(`https://al-saladia-server.vercel.app/booking/${params.id}`),
       },
       {
         path: "/booking-confirm",

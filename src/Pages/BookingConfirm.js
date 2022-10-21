@@ -7,9 +7,7 @@ const BookingConfirm = () => {
         {" "}
         Thank you! Stay bless!
       </h1>
-      <p className="text-center text-xl font-bold mt-2">
-        Your Booking Confirmed
-      </p>
+      <p className="text-center text-xl font-bold mt-2">Booking Confirm....</p>
     </div>
   );
 };
